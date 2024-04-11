@@ -11,10 +11,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-//momgodb Connection
+//mongodb Connection
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -32,15 +32,67 @@ async function run() {
     await client.connect();
 
     //create a book collection 
-    const bookcollections = client.db("books").collection("sample"); //database name, collection name
+    const bookcollections = client.db("books").collection("sample"); //database name=books, collection name=sample
 
-    //insert a book to the database (suing POST method)
+    //insert a book to the database (using POST method)
     app.post("/upload_book", async(req,res) => {
       const data = req.body;
       const result = await bookcollections.insertOne(data);
       res.send(result);
       
     })
+    
+    //getting all the books from database
+    app.get("/all_books", async(req,res) => {
+      const books = bookcollections.find();
+      const result = await books.toArray();
+      res.send(result);
+      
+    })
+
+    //updating(patch) a book data in database 
+    app.patch("/books/:id", async(req, res) => {
+        const id = req.params.id;
+        //console.log(id);
+        const updatedata = req.body;
+        const filter = { _id: new ObjectId(id) };
+
+    /* Set the upsert option to insert a document if no documents match
+    the filter */
+    const options = { upsert: true };
+    // Specify the update to set a value for the plot field
+    const updateBook = {
+      $set: {
+        ...updatedata
+      }
+    }
+      //update logic    
+      const result = await bookcollections.updateOne(filter, updateBook, options);
+      res.send(result);
+    })
+
+    //deleting a book data in database 
+    app.delete("/books/:id", async(req,res) => {
+      const id = req.params.id;
+      const filter = { _id: new ObjectId(id) };
+      //delete logic
+      const result = await bookcollections.deleteOne(filter);
+      res.send(result);
+    })
+
+    //filtering book data by category
+    app.get("/all_books", async(req,res) => {
+      
+      let query = {};
+      if (req.query && req.query.Genre)
+      {
+        query = {Genre: req.query.Genre};
+      }
+      //filter logic
+      const result = await bookcollections.find(query).toArray();
+      res.send(result);
+    });
+
 
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
