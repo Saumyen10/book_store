@@ -22,3 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+logo.PNG
+vite.svg
+react.svg
+logo.ico
+BookVerse(1).ico
+package.json
+cover_page
+
+.vscode
