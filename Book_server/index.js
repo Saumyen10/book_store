@@ -50,6 +50,15 @@ async function run() {
       
     })
 
+        //getting a particular book from database
+        app.get("/books/:id", async(req, res) => {
+          const id = req.params.id;
+          const filter = { _id: new ObjectId(id) };
+          const result = await bookcollections.findOne(filter);
+          res.send(result);
+          
+        })
+
     //updating(patch) a book data in database 
     app.patch("/books/:id", async(req, res) => {
         const id = req.params.id;

@@ -1,6 +1,7 @@
 .cover .swiper {
-    width: 240px;
+    width: 220px;
     height: 320px;
+    background-size: cover;  /* This will scale the background image to cover the entire element */
   }
   
   .cover .swiper-slide {
@@ -14,38 +15,37 @@
   }
   
   .cover .swiper-slide:nth-child(1n) {
-    background-image: url('/Book_front/src/assets/cover_page/1.jpeg');
+    background-image: url('/cover_page/book1.png');
   }
   
   .cover .swiper-slide:nth-child(2n) {
-    background-image: url('src/assests/cover_page/1.jpeg');
+    background-image: url('/cover_page/1.jpeg');
+    width: 220px; 
+    height: 320px;
   }
   
   .cover .swiper-slide:nth-child(3n) {
-    background-color: rgb(10, 184, 111);
+    background-image: url('/cover_page/5.png');
+    width: 220px; 
+    height: 320px;
   }
   
   .cover .swiper-slide:nth-child(4n) {
-    background-color: rgb(211, 122, 7);
+    background-image: url('/cover_page/2.jpeg');
+    width: 220px; 
+    height: 320px;
   }
   
   .cover .swiper-slide:nth-child(5n) {
-    background-color: rgb(118, 163, 12);
+    background-image: url('/cover_page/1.webp');
+    width: 220px; 
+    height: 320px;
   }
   
   .cover .swiper-slide:nth-child(6n) {
-    background-color: rgb(180, 10, 47);
+    background-image: url('/cover_page/4.webp');
+    width: 220px; 
+    height: 320px;
   }
   
-  .cover .swiper-slide:nth-child(7n) {
-    background-color: rgb(35, 99, 19);
-  }
-  
-  .cover .swiper-slide:nth-child(8n) {
-    background-color: rgb(0, 68, 255);
-  }
-  
-  .cover .swiper-slide:nth-child(9n) {
-    background-color: rgb(218, 12, 218);
-  }
   
