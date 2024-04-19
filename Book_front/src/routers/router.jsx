@@ -11,6 +11,13 @@ import Blog from "../components/Blog";
 import SingleBook from "../components/SingleBook";
 import Shop from "../shop/Shop";
 
+// importing dashboard routes 
+import Layout from "../dashboard/Layout";
+import Dashboard from "../dashboard/Dashboard";
+import UploadBook from "../dashboard/UploadBook";
+import ManageBook from "../dashboard/ManageBook";
+import EditBook from "../dashboard/EditBook";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,9 +44,37 @@ const router = createBrowserRouter([
         element: <SingleBook/>,
         loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)
      }, 
+
+   
+
     ]
 
   },
+
+   //dashboard
+      {
+         path: "/admin/dashboard",
+         element: <Layout/>,
+         children: [
+            {
+               path: "/admin/dashboard",
+               element: <Dashboard/>
+            },
+            {
+               path: "/admin/dashboard/upload",
+               element: <UploadBook/>
+            },
+            {
+               path: "/admin/dashboard/manage",
+               element: <ManageBook/>
+            },
+            {
+               path: "/admin/dashboard/edit/:id",
+               element: <EditBook/>,
+               loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)
+            },
+         ]
+      },
 ]);
 
 export default router;
