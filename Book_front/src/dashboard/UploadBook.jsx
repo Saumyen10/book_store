@@ -78,7 +78,7 @@ const UploadBook = () => {
 
             <div className='lg: w-1/2'>
             <div className="mb-2 block">
-              <Label value="Book Title" />
+              <Label value="Book Title" htmlFor='Title' />
             </div>
             <TextInput id="Title" type="text" placeholder="Book Name" required shadow />
           </div>

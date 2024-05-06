@@ -5,9 +5,11 @@ const SideNavBar = () => {
   return (
     <div className=" bg-gray-100 h-full p-3 space-y-2 w-60 dark:bg-gray-50 dark:text-gray-800">
 	<div className="flex items-center p-2 space-x-4">
-		<img src="/public/logo.ico" alt="" className="w-10 h-10 rounded-full dark:bg-gray-500" />
+		<img src="/logo.ico" alt="" className="w-10 h-10 rounded-full dark:bg-gray-500" />
 		<div>
+		<a rel="noopener noreferrer" href="/">
 			<h2 className="text-lg font-semibold">BookVerse</h2>
+		</a>
 			<span className="flex items-center space-x-1">
 				<a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-600">View profile</a>
 			</span>

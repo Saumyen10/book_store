@@ -17,6 +17,8 @@ import Dashboard from "../dashboard/Dashboard";
 import UploadBook from "../dashboard/UploadBook";
 import ManageBook from "../dashboard/ManageBook";
 import EditBook from "../dashboard/EditBook";
+import SignUp from "../components/SignUp";
+import LogIn from "../components/LogIn";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +77,16 @@ const router = createBrowserRouter([
             },
          ]
       },
+      //authenication
+      {
+         path: "signup",
+         element: <SignUp/>
+      },
+      {
+         path: "login",
+         element: <LogIn/>
+      }
+
 ]);
 
 export default router;
