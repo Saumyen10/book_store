@@ -31,6 +31,9 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+//ROUTE for main webpage using collections = "sample"
+
+
     //create a book collection 
     const bookcollections = client.db("books").collection("sample"); //database name=books, collection name=sample
 
@@ -101,6 +104,26 @@ async function run() {
       const result = await bookcollections.find(query).toArray();
       res.send(result);
     });
+
+//ROUTE for REVIEW webpage using collections = "userReview"
+
+const Reviewcollections = client.db("books").collection("userReview");
+
+    //insert a book to the database (using POST method)
+    app.post("/blog", async(req,res) => {
+      const data = req.body;
+      const result = await Reviewcollections.insertOne(data);
+      res.send(result);
+      
+    });
+
+       //getting all the reviews from database
+       app.get("/reviews", async(req,res) => {
+        const review = Reviewcollections.find();
+        const result = await review.toArray();
+        res.send(result);
+        
+      })
 
 
     // Send a ping to confirm a successful connection

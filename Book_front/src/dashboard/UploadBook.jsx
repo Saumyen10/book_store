@@ -22,6 +22,8 @@ const UploadBook = () => {
     "Biography",
     "Business",
     "Music",
+    "Finance",
+    "Motivation",
     "Children",
     "Art",
     "Technology"

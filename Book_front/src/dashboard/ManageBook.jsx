@@ -30,7 +30,7 @@ const handdleDelete = (id) => {
     <div className='px-4 my-12'>
       <h2 className='text-3xl font-bold text-center mb-8'>Manage Your Books</h2>
               {/* Table for book data */}
-      <Table className='lg:w-[1180px]'>
+      <Table className='lg w-1/8'>
         <Table.Head>
           <Table.HeadCell>No.</Table.HeadCell>
           <Table.HeadCell>Book Name</Table.HeadCell>

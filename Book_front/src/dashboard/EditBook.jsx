@@ -3,9 +3,9 @@ import { useParams, useLoaderData } from 'react-router-dom';
 import { Button, Label, Select, TextInput, Textarea } from 'flowbite-react';
 
 const EditBook = () => {
- 
+
   const { id } = useParams();
-  const [Title, Author, selectBook, Description, Publisher, Rating, Page_Count, imageURL, PDF_URL] = useLoaderData();
+  const {Title, Author, Genre, Description, Publisher, Rating, Page_Count, imageURL, PDF_URL} = useLoaderData();
 
   const BookCategories = [
     "Fiction",
@@ -27,49 +27,48 @@ const EditBook = () => {
     "Art",
     "Technology"
   ]
-  const [selectBookCategory, setSelectBookCategory] = useState(BookCategories);
-  
+
+  const [selectedBookCategory, setSelectedBookCategory] = useState(Genre);
+
   const handleSelectedBookValue = (event) => {
     console.log(event.target.value);
-    setSelectBookCategory(event.target.value);
+    setSelectedBookCategory(event.target.value);
   };
 
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
 
-    //write all book data 
-    const Title = form.Title.value;
-    const Author = form.Author.value;
-    const selectBook = form.selectBook.value;
-    const Description = form.Description.value;
-    const Publisher = form.Publisher.value;
-    const Page_Count = form.Page_Count.value;
-    const Rating = form.Rating.value;
-    const imageURL = form.imageURL.value;
-    const PDF_URL = form.PDF_URL.value;
+    const updatedBookObj = {
+        Title: form.Title.value,
+        Author: form.Author.value,
+        Genre: selectedBookCategory, // Use the selected genre state here
+        Description: form.Description.value,
+        Publisher: form.Publisher.value,
+        Page_Count: form.Page_Count.value,
+        Rating: form.Rating.value,
+        imageURL: form.imageURL.value,
+        PDF_URL: form.PDF_URL.value
+    };
 
-    const updateBookObj = {
-        Title, Author, selectBook, Description, Publisher, Page_Count, Rating, imageURL, PDF_URL
-      }
+    console.log(updatedBookObj);
 
-      console.log(updateBookObj);
-    
     fetch(`http://localhost:5000/books/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(updateBookObj)
+      body: JSON.stringify(updatedBookObj)
     })
     .then(res => res.json())
     .then(data => {
-      alert("Book is updated Successfully!!!");
+      alert("Book is updated successfully!");
+      form.reset();
     });
   };
 
   return (
-      <div className="px-4 my-12">
+    <div className="px-4 my-12">
       <h2 className="text-3xl font-bold text-center mb-8">
         Update the book data
       </h2>
@@ -113,10 +112,10 @@ const EditBook = () => {
         <div className="flex gap-8">
           <div className="lg:w-1/2">
             <div className="mb-2 block">
-              <Label value="Genre" htmlFor="selectBook" />
+              <Label value="Genre" htmlFor="Genre" />
             </div>
 
-            <Select id='selectBook' className='w-full rounded' value={selectBookCategory} onChange={handleSelectedBookValue}>
+            <Select id='Genre' className='w-full rounded' value={selectedBookCategory} onChange={handleSelectedBookValue}>
                     {/* define the choices */}
                   {
                     BookCategories.map((option) => <option key={option} value={option}> {option}</option>)
@@ -222,4 +221,4 @@ const EditBook = () => {
   )
 }
 
-export default EditBook
+export default EditBook;

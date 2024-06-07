@@ -7,7 +7,7 @@ import {
 import App from "../App";
 import Home from "../home/Home";
 import About from "../about/About";
-import Blog from "../components/Blog";
+import Blog from "../blog/Blog";
 import SingleBook from "../components/SingleBook";
 import Shop from "../shop/Shop";
 
@@ -19,6 +19,7 @@ import ManageBook from "../dashboard/ManageBook";
 import EditBook from "../dashboard/EditBook";
 import SignUp from "../components/SignUp";
 import LogIn from "../components/LogIn";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -59,8 +60,9 @@ const router = createBrowserRouter([
          element: <Layout/>,
          children: [
             {
-               path: "/admin/dashboard",
-               element: <Dashboard/>
+               path: "/admin/dashboard",  
+               element: <Dashboard/>       //#everyone can access
+              // element: <PrivateRoute><Dashboard/></PrivateRoute>
             },
             {
                path: "/admin/dashboard/upload",
@@ -82,10 +84,13 @@ const router = createBrowserRouter([
          path: "signup",
          element: <SignUp/>
       },
+      
       {
+         //private routing
          path: "login",
          element: <LogIn/>
-      }
+      },
+      
 
 ]);
 

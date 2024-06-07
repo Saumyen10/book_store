@@ -44,9 +44,10 @@ const Review = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-            <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md: m-5 rounded-lg-border'>
+          <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md: m-5 rounded-lg-border'>
                 <div className='space-y-4'>
                     <div className='text-yellow-300 flex gap-1'>
+                        <FaStar/>
                         <FaStar/>
                         <FaStar/>
                         <FaStar/>
@@ -56,16 +57,14 @@ const Review = () => {
                     {/* text*/ }
                     <div className='mt-6'>
                         <p className='mb-2'>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                            "This is the best service I have ever used. The team is extremely professional and the results were beyond my expectations. Highly recommend!"                  
                         </p>
-                        <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                        <p className='text-base'>CE0, XYZ Company</p>
+                        <h4 className='text-lg font-medium'>Rahul Sharma</h4>
+                        <p className='text-base'>CEO, Tech Solutions</p>
                     </div>
                 </div>
             </SwiperSlide>
             
-            {/* use the same Review code logic*/ }
-
             <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md: m-5 rounded-lg-border'>
             <div className='space-y-4'>
                 <div className='text-yellow-300 flex gap-1'>
@@ -73,15 +72,16 @@ const Review = () => {
                     <FaStar/>
                     <FaStar/>
                     <FaStar/>
+                    <FaStar/>
                 </div>
 
                 {/* text*/ }
                 <div className='mt-6'>
                     <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                        "Amazing experience! The staff was very friendly and the quality of work was excellent. Will definitely be back."                  
                     </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
+                    <h4 className='text-lg font-medium'>Mrityunjay Bayan</h4>
+                    <p className='text-base'>Manager, ABC Corp</p>
                 </div>
             </div>
         </SwiperSlide>
@@ -93,15 +93,16 @@ const Review = () => {
                     <FaStar/>
                     <FaStar/>
                     <FaStar/>
+                    <FaStar/>
                 </div>
 
                 {/* text*/ }
                 <div className='mt-6'>
                     <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                        "Excellent service and great value for money. I would recommend them to anyone looking for high-quality work."                  
                     </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
+                    <h4 className='text-lg font-medium'>Anjali Mehta</h4>
+                    <p className='text-base'>Director, XYZ Pvt Ltd</p>
                 </div>
             </div>
         </SwiperSlide>
@@ -113,15 +114,16 @@ const Review = () => {
                     <FaStar/>
                     <FaStar/>
                     <FaStar/>
+                    <FaStar/>
                 </div>
 
                 {/* text*/ }
                 <div className='mt-6'>
                     <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                        "I am very satisfied with the service provided. The team is knowledgeable and very responsive to our needs."                  
                     </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
+                    <h4 className='text-lg font-medium'>Mehdi Aslam</h4>
+                    <p className='text-base'>Founder, Startup Inc</p>
                 </div>
             </div>
         </SwiperSlide>
@@ -133,15 +135,16 @@ const Review = () => {
                     <FaStar/>
                     <FaStar/>
                     <FaStar/>
+                    <FaStar/>
                 </div>
 
                 {/* text*/ }
                 <div className='mt-6'>
                     <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                        "Fantastic service! The team exceeded my expectations and delivered exceptional results."                  
                     </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
+                    <h4 className='text-lg font-medium'>Sunita Verma</h4>
+                    <p className='text-base'>COO, Global Ventures</p>
                 </div>
             </div>
         </SwiperSlide>
@@ -153,35 +156,16 @@ const Review = () => {
                     <FaStar/>
                     <FaStar/>
                     <FaStar/>
-                </div>
-
-                {/* text*/ }
-                <div className='mt-6'>
-                    <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
-                    </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
-                </div>
-            </div>
-        </SwiperSlide>
-
-        <SwiperSlide className='shadow-2xl bg-white py-8 px-4 md: m-5 rounded-lg-border'>
-            <div className='space-y-4'>
-                <div className='text-yellow-300 flex gap-1'>
-                    <FaStar/>
-                    <FaStar/>
-                    <FaStar/>
                     <FaStar/>
                 </div>
 
                 {/* text*/ }
                 <div className='mt-6'>
                     <p className='mb-2'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque dicta nulla blanditiis voluptatem obcaecati repudiandae explicabo reiciendis nesciunt deleniti autem deserunt facere quod officia, nostrum, voluptatibus, unde mollitia adipisci veniam!                  
+                        "Highly professional and great attention to detail. I am very happy with the outcome."                  
                     </p>
-                    <h4 className='text-lg font-medium'> Saumyen P Deka</h4>
-                    <p className='text-base'>CE0, XYZ Company</p>
+                    <h4 className='text-lg font-medium'>Amit Patel</h4>
+                    <p className='text-base'>CTO, Digital Solutions</p>
                 </div>
             </div>
         </SwiperSlide>
