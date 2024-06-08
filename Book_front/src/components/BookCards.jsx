@@ -60,13 +60,8 @@ const BookCards = ({ headline, books }) => {
                 </div>
 
                 <div>
-                  <h3>{book.Title}</h3>
+                  <h3><b>{book.Title}</b></h3>
                   <p>{book.Author}</p>
-                  <div>
-                    <div>
-                      <p>Rs. 299.00</p>
-                    </div>
-                  </div>
                 </div>
               </Link>
             </SwiperSlide>

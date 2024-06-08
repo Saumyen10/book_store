@@ -10,6 +10,8 @@ import About from "../about/About";
 import Blog from "../blog/Blog";
 import SingleBook from "../components/SingleBook";
 import Shop from "../shop/Shop";
+import Best from "../best/Best";
+
 
 // importing dashboard routes 
 import Layout from "../dashboard/Layout";
@@ -20,6 +22,9 @@ import EditBook from "../dashboard/EditBook";
 import SignUp from "../components/SignUp";
 import LogIn from "../components/LogIn";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import InsertReview from "../blog/InsertReview";
+import Order from "../order/Order";
+
 
 const router = createBrowserRouter([
   {
@@ -39,8 +44,20 @@ const router = createBrowserRouter([
         element: <Blog/>
      }, 
      {
+        path: "/insertreview",      // this is the insert review page  
+        element: <InsertReview/>
+     }, 
+     {
         path: "/shop",      // this is the shop page  
         element: <Shop/>
+     }, 
+     {
+        path: "/order",      // this is the payment page  
+        element: <Order/>
+     }, 
+     {
+        path: "/best",      // this is the best seller page  
+        element: <Best/>
      }, 
      {
         path: "/books/:id",      // this is the single book page  

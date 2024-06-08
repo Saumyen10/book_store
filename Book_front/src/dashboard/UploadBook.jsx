@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 //importing react items
 import { Button, Checkbox, Label, TextInput, Select, Textarea } from "flowbite-react";
 
-
 const UploadBook = () => {
+
+  const navigate = useNavigate();
 
   const BookCategories = [
     "Fiction",
@@ -34,7 +35,7 @@ const UploadBook = () => {
     setSelectBookCategory(event.target.value);
   }
 
-  //accept only wehn data is filled
+  //accept only when data is filled completely
   const handleBookSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -67,6 +68,7 @@ const UploadBook = () => {
         //console.log(data);
         alert("Book Uploaded Successfully!!!")
         form.reset();  //form is reset after successfully uploading Book
+        navigate('/admin/dashboard/manage')
       }) 
   }
 
@@ -138,7 +140,8 @@ const UploadBook = () => {
               <div className="mb-2 block">
                 <Label value="Rating" />
               </div>
-              <TextInput id="Rating" type="number" placeholder="Rate the Book..." required shadow />
+              <TextInput id="Rating" type="number" step="0.01" // Allows for floating point numbers
+                  min="1" max="5" placeholder="Rate the Book..." required shadow />
             </div>
         </div>
 

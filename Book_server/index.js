@@ -110,7 +110,7 @@ async function run() {
 const Reviewcollections = client.db("books").collection("userReview");
 
     //insert a book to the database (using POST method)
-    app.post("/blog", async(req,res) => {
+    app.post("/blog", async(req,res) => {                 //insert review
       const data = req.body;
       const result = await Reviewcollections.insertOne(data);
       res.send(result);

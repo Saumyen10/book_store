@@ -51,7 +51,7 @@ const handdleDelete = (id) => {
               </Table.Cell>
               <Table.Cell>{book.Author}</Table.Cell>
               <Table.Cell>{book.Genre}</Table.Cell>
-              <Table.Cell>$10.00</Table.Cell>
+              <Table.Cell>Rs. 299.00</Table.Cell>
               <Table.Cell>
                 <Link className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
                   to={`/admin/dashboard/edit/${book._id}`}>

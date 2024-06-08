@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
-import { useParams, useLoaderData } from 'react-router-dom';
+import { useParams, useLoaderData, Link, useNavigate } from 'react-router-dom';
 import { Button, Label, Select, TextInput, Textarea } from 'flowbite-react';
 
 const EditBook = () => {
 
+  const navigate = useNavigate();
   const { id } = useParams();
   const {Title, Author, Genre, Description, Publisher, Rating, Page_Count, imageURL, PDF_URL} = useLoaderData();
 
@@ -23,6 +24,8 @@ const EditBook = () => {
     "Biography",
     "Business",
     "Music",
+    "Finance",
+    "Motivation",
     "Children",
     "Art",
     "Technology"
@@ -64,6 +67,7 @@ const EditBook = () => {
     .then(data => {
       alert("Book is updated successfully!");
       form.reset();
+      navigate('/admin/dashboard/manage')
     });
   };
 
@@ -176,6 +180,8 @@ const EditBook = () => {
             <TextInput
               id="Rating"
               type="number"
+              step="0.01" // Allows for floating point numbers
+                  min="1" max="5"
               placeholder="Rate the Book..."
               required
               shadow
