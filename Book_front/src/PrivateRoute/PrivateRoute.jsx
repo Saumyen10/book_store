@@ -10,13 +10,14 @@ const PrivateRoute = ({children}) => {
   
   if(loading)
     {
-      return 
+      return (
       <div className='text-center'>
           <Button>
             <Spinner aria-label="Spinner button example" size="sm" />
             <span className="pl-3">Loading...</span>
           </Button>
       </div>
+      );
     }
 
     if(user) {
