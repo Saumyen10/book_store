@@ -6,7 +6,8 @@ const Best = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/all_books")
+    /*fetch("http://localhost:5000/all_books")*/
+    fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/all_books`)
       .then(res => res.json())
       .then(data => setBooks(data));
   }, []);

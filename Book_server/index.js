@@ -4,7 +4,13 @@ const port = 5000
 const cors = require('cors')
 
 //middleware
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-book_store.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+));
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -15,7 +21,7 @@ app.get('/', (req, res) => {
 
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-
+const uri = "mongodb+srv://saumyen45:XAqvwaNPpLxnCWQq@cluster0.9qofcdt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {

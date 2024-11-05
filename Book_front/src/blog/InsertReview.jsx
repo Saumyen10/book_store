@@ -22,7 +22,8 @@ const InsertReview = () => {
 
     console.log(ReviewObj);
 
-    fetch("http://localhost:5000/blog", {
+    /*fetch("http://0/blog", {*/
+    fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/blog`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",

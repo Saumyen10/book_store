@@ -62,7 +62,8 @@ const router = createBrowserRouter([
      {
         path: "/books/:id",      // this is the single book page  
         element: <SingleBook/>,
-        loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)
+        /*loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)*/
+        loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`)
      }, 
 
    
@@ -92,7 +93,8 @@ const router = createBrowserRouter([
             {
                path: "/admin/dashboard/edit/:id",
                element: <EditBook/>,
-               loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)
+              /* loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`) */
+               loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`)
             },
          ]
       },

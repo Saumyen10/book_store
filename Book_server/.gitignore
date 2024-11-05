@@ -1,1 +1,7 @@
-node_modules
+
+
+#Book_front
+Book_front/.env
+
+#Book_server
+.env

@@ -1,0 +1,18 @@
+{
+    "builds": [
+      {
+        "use": "@vercel/node"
+      },
+      {
+        "src": "Book_front/package.json",
+        "use": "@vercel/static-build"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
+  }
+  

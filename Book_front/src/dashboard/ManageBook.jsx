@@ -7,7 +7,8 @@ const ManageBook = () => {
   const [allBooks, setAllBooks] = useState([]);
 
 useEffect(() => {
-  fetch("http://localhost:5000/all_books")
+  /*fetch("http://localhost:5000/all_books")*/
+  fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/all_books`)
     .then(res => res.json())
     .then(data => setAllBooks(data));
 }, []);
@@ -15,7 +16,8 @@ useEffect(() => {
 // delete a book
 const handdleDelete = (id) => {
   console.log(id);
-  fetch(`http://localhost:5000/books/${id}`, {
+  /*fetch(`http://localhost:5000/books/${id}`, { */
+  fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/${id}`, {
     method: "DELETE",
   })
   .then(res => res.json())

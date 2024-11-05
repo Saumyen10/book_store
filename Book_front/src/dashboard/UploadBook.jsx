@@ -58,7 +58,8 @@ const UploadBook = () => {
       console.log(bookObj);
       
       //send Data to Database
-      fetch("http://localhost:5000/upload_book", {
+      /*fetch("http://localhost:5000/upload_book", { */
+      fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/upload_book`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
