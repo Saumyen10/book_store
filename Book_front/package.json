@@ -36,8 +36,9 @@
     "vite": "^5.2.0"
   },
   "resolutions": {
-  "@emotion/react": "^11.10.6",
-  "@emotion/cache": "^11.10.6"
+  "@emotion/react": "11.10.0",
+  "@emotion/cache": "11.10.0"
 }
+
 
 }
