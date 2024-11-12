@@ -5,13 +5,16 @@ import { Link } from 'react-router-dom'
 //    import { reacticons } from "react-icons/io5";
 
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
-import { IoMdClose } from "react-icons/io";
+import { FaCartPlus } from "react-icons/fa6";
 
-const Navbar = () => {
+const Navbar = ({size}) => {
   //hooks
 
   const [isMenuOpen, SetIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+
+  const[show, setShow] = useState(true);
+  const[cart, setCart] = useState([]);
 
   // toggle menu open
   const toggleMenu = () => {
@@ -67,12 +70,24 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* btn for devices */}
-          <div className="space-x-12 hidden lg:flex items-center">
-            <button>
-              <FaBarsStaggered className="w-6 hover:text-blue-700" />
-            </button>
-          </div>
+        {/* btn for devices */}
+<div className="flex items-center space-x-12 hidden lg:flex">
+  <span className="relative">
+    <Link to="/cart">
+      <FaCartPlus className="w-6 hover:text-blue-700" />
+    </Link>
+    {/* Badge for cart size */}
+      <span className="absolute bottom-3 right-0 bg-red-500 text-white text-xs rounded-full w-3 h-4 flex items-center justify-center">
+        {size}
+      </span>
+  </span>
+  
+  <button>
+    <FaBarsStaggered className="w-6 hover:text-blue-700" />
+  </button>
+</div>
+
+
 
           {/* menu for mobile devices */}
           <div className="md:hidden">

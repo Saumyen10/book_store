@@ -56,8 +56,8 @@ const EditBook = () => {
 
     console.log(updatedBookObj);
 
-    /*fetch(`http://localhost:5000/books/${id}`, {*/
-    fetch(`${import.meta.env.REACT_APP_BACKEND_URL}${id}`, {
+    fetch(`http://localhost:5000/books/${id}`, {
+    /*fetch(`${import.meta.env.REACT_APP_BACKEND_URL}${id}`, {*/
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"

@@ -2,23 +2,38 @@ import React, { useEffect, useState } from 'react'
 
 //import flowbite component
 import { Card } from "flowbite-react";
+import { FaCartPlus } from "react-icons/fa6";
 
 const Shop = () => {
   const [books, setBooks] = useState([]);
   useEffect(() =>{
-   /* fetch("http://localhost:5000/all_books").then (res=> res.json()).then(data=>setBooks(data)); */
-    fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/all_books`).then (res=> res.json()).then(data=>setBooks(data));
-
+    fetch("http://localhost:5000/all_books").then (res=> res.json()).then(data=>setBooks(data)); 
+    /*  fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/all_books`).then (res=> res.json()).then(data=>setBooks(data)); */
+    
   },[])
+  
+  const [size, setSize] = useState(0);
+  const handleCartClick = (item) => {
+        console.log(item);
+        setSize((size)=> size+1)
+  };
+
   return (
     <div className='mt-28 px-4 lg:px-28'>
       <h2 className='text-5xl font-bold text-center mb-8'>All Books Are Here!</h2>
+
+        <div className='cart'>
+            <span>
+              import { FaCartPlus } from "react-icons/fa6";
+            </span>
+
+        </div>
 
       <div className='grid gap-24 lg my-8: grid-cols-4 sm: grid-cols-4 md: grid-cols-4'>
         {
           books.map( 
             book => 
-            <Card>
+            <Card handleCartClick={handleCartClick}>
       
       <img src={book.imageURL}  alt=""  className='h-5/6 w-full'/>
       <a href="#">
@@ -76,10 +91,10 @@ const Shop = () => {
       <div className="flex items-center justify-between">
         <span className="text-3xl font-bold text-gray-900 dark:text-white">Rs. 299</span>
         <a
-          href="/order"
+          href="/cart"
           className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
         >
-          Buy Now
+          Add to Cart
         </a>
       </div>
     </Card>
@@ -91,4 +106,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default Shop;

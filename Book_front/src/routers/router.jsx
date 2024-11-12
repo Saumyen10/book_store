@@ -11,7 +11,7 @@ import Blog from "../blog/Blog";
 import SingleBook from "../components/SingleBook";
 import Shop from "../shop/Shop";
 import Best from "../best/Best";
-
+import Cart from "../cart/Cart";
 
 // importing dashboard routes 
 import Layout from "../dashboard/Layout";
@@ -56,14 +56,18 @@ const router = createBrowserRouter([
         element: <Order/>
      }, 
      {
+        path: "/cart",      // this is the Add_to_Cart page  
+        element: <Cart/>
+     }, 
+     {
         path: "/best",      // this is the best seller page  
         element: <Best/>
      }, 
      {
         path: "/books/:id",      // this is the single book page  
         element: <SingleBook/>,
-        /*loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)*/
-        loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`)
+        loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`)
+        /*loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`)*/
      }, 
 
    
@@ -93,8 +97,8 @@ const router = createBrowserRouter([
             {
                path: "/admin/dashboard/edit/:id",
                element: <EditBook/>,
-              /* loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`) */
-               loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`)
+               loader: ({params}) => fetch (`http://localhost:5000/books/${params.id}`) 
+              /* loader: ({params}) => fetch (`${import.meta.env.REACT_APP_BACKEND_URL}/${params.id}`) */
             },
          ]
       },

@@ -13,8 +13,8 @@ const Blog = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    /*fetch('http://localhost:5000/reviews')*/
-    fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/reviews`)
+    fetch('http://localhost:5000/reviews')
+    /*fetch(`${import.meta.env.REACT_APP_BACKEND_URL}/reviews`)*/
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

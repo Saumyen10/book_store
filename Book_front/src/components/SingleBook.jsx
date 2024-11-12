@@ -22,11 +22,21 @@ const SingleBook = () => {
             {Page_Count} Pages , <strong> {Publisher} </strong>
         </p>
 
-        <div className="flex justify-center">
-          <Button href={PDF_URL} target="_blank" rel="noopener noreferrer" className="text-white bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg shadow">
-            Read Online
-          </Button>
-        </div>
+        <div className="flex justify-between">
+            <div>
+              <Button href={PDF_URL} target="_blank" rel="noopener noreferrer" className="text-white bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg shadow">
+                Read Online
+              </Button>
+            </div>
+
+            <div>
+              <Button href="/cart" className="text-white bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-lg shadow">
+                Add to Cart
+              </Button>
+            </div>
+          </div>
+
+
 
         
       
