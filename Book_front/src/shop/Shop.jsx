@@ -24,7 +24,7 @@ const Shop = () => {
 
         <div className='cart'>
             <span>
-              import { FaCartPlus } from "react-icons/fa6";
+              {/* import { FaCartPlus } from "react-icons/fa6"; */}
             </span>
 
         </div>
